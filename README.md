@@ -2,6 +2,20 @@
 
 A local veterinary practice has asked you to build a web application to help them manage their animals and vets. A vet may look after many animals at a time. An animal is registered with only one vet. 
 
+App must be built using only:
+
+- HTML/CSS
+- Python
+- Flask
+- PostgreSQL and psycopg2
+
+It must not use:
+
+- Any Object Relational Mapper (e.g. ActiveRecord)
+- JavaScript
+- Any pre-built CSS libraries, such as Bootstrap
+- Authentication
+
 #### MVP
 
 - The practice wants to be able to register/track animals. 
@@ -28,7 +42,7 @@ A local veterinary practice has asked you to build a web application to help the
 
 - Sometimes an owner does not know the DOB - allow them to enter an age instead. Keep this up-to-date, if they visit again a year later this hsould be reflected in the pets age (if the pet was 3 on first admission it will be 4 on the year-later admission)
 
-- Add extra functionality to your app:
+- Add extra functionality to your app: assigning treatments,  comprehensive ways  of maintaining treatment notes over time, appointments, pricing/billing
 
 
 ##### Initial Thoughts on MVP
