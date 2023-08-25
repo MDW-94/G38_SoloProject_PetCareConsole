@@ -67,7 +67,7 @@ It must not use:
 
 - Add a filter function for the pets index to find specific pets - maybe this filter function can detect certain text within the treatment notes
 
-- If photo of animal is not available use a unicode image substitute for the animal to appear in the show and index pages
+- If photo of animal is not available use a unicode image substitute for the animal to appear in the show and index pages - unicode dependent upon type of animal
 
 
 #### Testing
@@ -75,4 +75,8 @@ It must not use:
 #### Setup + Installation
 
 #### My Process
+
+- Diagrams link: https://www.figma.com/file/7lg3FDk1aKOEeGpsKyVq3A/Welcome-to-FigJam?type=whiteboard&node-id=0%3A1&t=9veJL0FM4aQyftR0-1
+
+
 
