@@ -49,6 +49,7 @@ It must not use:
 
 - contact details for owner could be substituted for owner_id - another table could be made
 - user should be able to add, delete, save and update pets and vets
+- convert str value of pet DOB to datetime
 
 ##### Initial Thoughts of Extra Functionality:
 
