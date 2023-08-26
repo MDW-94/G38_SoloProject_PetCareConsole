@@ -8,7 +8,7 @@ from datetime import datetime
 def save(pet):
     now = datetime.now() 
     time = now.strftime("%m/%d/%Y, %H:%M:%S")
-    sql = "INSERT INTO pets (name, dob, gender, species, contact_details, treatment_notes, admission_date) VALUES ( %s, %s, %s, %s, %s, %s, %s) RETURNING id, admission_date"
+    sql = "INSERT INTO pets (name, dob, gender, species, contact_details, treatment_notes, admission_date) VALUES ( %s, %s, %s, %s, %s, %s, %s ) RETURNING pet_id, admission_date"
     values = [pet.name, 
               pet.dob, 
               pet.gender, 
@@ -18,7 +18,7 @@ def save(pet):
               time]
     results = run_sql( sql,values )
     # pdb.set_trace()
-    id = results[0]['id']
+    id = results[0]['pet_id']
     admission_date = results[0]['admission_date']
     pet.id = id
     pet.admission_date = admission_date

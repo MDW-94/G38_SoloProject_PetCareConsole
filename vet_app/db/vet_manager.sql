@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS vets;
 -- DROP TABLE owners;
 
 CREATE TABLE pets (
-    id SERIAL PRIMARY KEY,
+    pet_id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     dob VARCHAR(255), -- use datetime? age int alternative? age(timestamp) function?	
     gender VARCHAR(255),
@@ -17,10 +17,10 @@ CREATE TABLE pets (
 );
 
 CREATE TABLE vets (
-    id SERIAL PRIMARY KEY,
+    vet_id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     address VARCHAR(255),
-    FOREIGN KEY (current_pets) INT NOT NULL REFERENCES pets(id) ON DELETE CASCADE
+    current_pets_id INT REFERENCES pets(pet_id) ON DELETE CASCADE
     -- owners INT NOT NULL REFERENCES owners(id) ON DELETE CASCADE
     -- registered_owners 
 );
