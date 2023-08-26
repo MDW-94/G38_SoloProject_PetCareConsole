@@ -57,7 +57,7 @@ It must not use:
 
 - Feedings times including a note of completion. Feedings times could be noted for all pets and monitored (completed/not completed) for pets currently checked in
 
-- Allow vets to add a "wild" animal. An animal admitte that does not necessarily have an owner (or the owner/owner id is unknown) 
+- Allow vets to add a "wild" animal. An animal admitted that does not necessarily have an owner (or the owner/owner id is unknown) 
 
 - Timestamping option for the treatment notes. Allow users to input information regarding the animal and update it continuously whilst in treatment (keeping a record of the time note was uploaded)
 
