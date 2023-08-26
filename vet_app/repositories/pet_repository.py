@@ -18,3 +18,38 @@ def save(pet):
     pet.id = id
     pet.admission_date = admission_date
     return pet
+
+def select(id):
+    pet = None
+    sql = "SELECT * FROM pets WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+    if results:
+        result = results[0]
+        pet = Pet(result['name'], 
+                  result['dob'], 
+                  result['gender'], 
+                  results['species'],
+                  results['contact_details'],
+                  results['treatment_notes'],
+                  results['admission_date'],
+                  results['id'])
+    return pet
+
+
+
+def update_details(id):
+    sql = "UPDATE pets SET ... WHERE id = %s"
+
+
+def delete_all():
+    sql = "DELETE FROM pets"
+    run_sql(sql)
+
+def delete(id):
+    sql = "DELETE FROM pets WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
+
+
