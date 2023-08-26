@@ -42,10 +42,36 @@ def select(id):
     #               results['id'])
     return pet
 
+def select_all():
+    pets = []
 
-def update_details(id):
-    sql = "UPDATE pets SET ... WHERE id = %s"
+    sql = "SELECT * FROM pets"
+    results = run_sql(sql)
 
+    # for row in results:
+    #     pet = Pet(row['name'], 
+    #                row['dob'], 
+    #                row['gender'], 
+    #                row['species'], 
+    #                row['contact_details'], 
+    #                row['treatment_notes'], 
+    #                row['admission_date'], 
+    #                row['id'], )
+    #     pets.append(pet)
+    return results
+
+
+def update_details(pet):
+    sql = "UPDATE pets SET (name, dob, gender, species, contact_details, treatment_notes, admission_date) = (%s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [pet.name, pet.dob, pet.gender, pet.species, pet.contact_details, pet.treatment_notes, pet.admission_date]
+    run_sql(sql, values)
+
+# separate functions for updating treatment notes?
+
+# def update_treatment(id): ?return treatment_notes, store them in variable, then add that variable to a date time plus input
+#     now = datetime.now() 
+#     time = now.strftime("%m/%d/%Y, %H:%M:%S")
+#     sql = "UPDATE = %s" + adding to the treatment notes!
 
 def delete_all():
     sql = "DELETE FROM pets"

@@ -20,16 +20,18 @@ CREATE TABLE vets (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     address VARCHAR(255),
-    current_pets INT NOT NULL REFERENCES pets(id) ON DELETE CASCADE
+    FOREIGN KEY (current_pets) INT NOT NULL REFERENCES pets(id) ON DELETE CASCADE
     -- owners INT NOT NULL REFERENCES owners(id) ON DELETE CASCADE
     -- registered_owners 
 );
+
 
 -- -- CREATE TABLE owners (
 --     id SERIAL PRIMARY KEY,
 --     first_name VARCHAR(255),
 --     last_name VARCHAR(255),
---     pets_owned INT NOT NULL REFERENCE pets(id) ON DELETE CASCADE,
+--     FOREIGN KEY (pets_owned) INT NOT NULL REFERENCE pets(id) ON DELETE CASCADE,
 --     contact_info VARCHAR(255),
 --     registered BOOLEAN DEFAULT FALSE,
+--     FOREIGN KEY(registered_vet) INT NOT NULL REFERENCES vets(id) ON DELETE CASCADE
 -- -- );

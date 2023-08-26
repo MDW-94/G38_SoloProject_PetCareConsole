@@ -15,7 +15,9 @@ pet_2 = Pet("Derek", "2010-02-13", "male", "ostrich", "3578479456", "damaged nos
 pet_repository.save(pet_1)
 pet_repository.save(pet_2)
 
-print(pet_repository.select(2))
+# print(pet_repository.select(2))
+# print("------------")
+# print(pet_repository.select_all())
 
 # print(datetime.now())
 
