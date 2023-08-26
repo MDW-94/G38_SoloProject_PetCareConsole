@@ -3,14 +3,19 @@ from db.run_sql import run_sql
 from models.pet import Pet
 from models.vet import Vet
 
+from datetime import datetime
+
 def save(pet):
-    sql = "INSERT INTO pets (name, dob, gender, species, contact_details, treatment_notes, admission_date) VALUES ( %s, %s, %s, %s, %s, %s, CURRENT_TIMESTAMP) RETURNING id, admission_date"
+    now = datetime.now() 
+    time = now.strftime("%m/%d/%Y, %H:%M:%S")
+    sql = "INSERT INTO pets (name, dob, gender, species, contact_details, treatment_notes, admission_date) VALUES ( %s, %s, %s, %s, %s, %s, %s) RETURNING id, admission_date"
     values = [pet.name, 
               pet.dob, 
               pet.gender, 
               pet.species, 
               pet.contact_details, 
-              pet.treatment_notes]
+              pet.treatment_notes,
+              time]
     results = run_sql( sql,values )
     # pdb.set_trace()
     id = results[0]['id']
@@ -24,18 +29,18 @@ def select(id):
     sql = "SELECT * FROM pets WHERE id = %s"
     values = [id]
     results = run_sql(sql, values)
-    if results:
-        result = results[0]
-        pet = Pet(result['name'], 
-                  result['dob'], 
-                  result['gender'], 
-                  results['species'],
-                  results['contact_details'],
-                  results['treatment_notes'],
-                  results['admission_date'],
-                  results['id'])
+    pet = results
+    # if results:
+    #     result = results[0]
+    #     pet = Pet(result['name'], 
+    #               result['dob'], 
+    #               result['gender'], 
+    #               results['species'],
+    #               results['contact_details'],
+    #               results['treatment_notes'],
+    #               results['admission_date'],
+    #               results['id'])
     return pet
-
 
 
 def update_details(id):

@@ -10,7 +10,7 @@ CREATE TABLE pets (
     species VARCHAR(255),
     contact_details VARCHAR(255),
     treatment_notes VARCHAR(255),
-    admission_date TIMESTAMP
+    admission_date VARCHAR(255)
     -- in_treatment BOOLEAN NOT NULL DEFAULT FALSE;
     -- feeding_times DATETIME
     -- discharge_date TIMESTAMP
