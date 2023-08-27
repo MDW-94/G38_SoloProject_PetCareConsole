@@ -13,3 +13,12 @@ def save(vet):
     vet.id = results[0]['vet_id']
     vet.current_pets = results[0]['current_pets_id']
     return vet
+
+#def select_all():
+
+#def select():
+
+#def delete():
+
+#def delete_all():
+

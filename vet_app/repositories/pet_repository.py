@@ -73,6 +73,8 @@ def update_details(pet):
 #     time = now.strftime("%m/%d/%Y, %H:%M:%S")
 #     sql = "UPDATE = %s" + adding to the treatment notes!
 
+# def assign_vet():
+
 def delete_all():
     sql = "DELETE FROM pets"
     run_sql(sql)
