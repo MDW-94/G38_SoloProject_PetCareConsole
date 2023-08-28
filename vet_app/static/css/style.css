@@ -1,0 +1,10 @@
+body {
+    background: url('/static/images/background.jpg');
+    background-size: cover;
+}
+
+
+
+.h1 {
+    color: whitesmoke;
+}

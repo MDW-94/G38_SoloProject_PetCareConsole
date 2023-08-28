@@ -9,7 +9,7 @@ pets_blueprint = Blueprint("pets", __name__)
 # INDEX
 @pets_blueprint.route("/pets")
 def pets():
-    pets = pet_repository.select_al()
+    pets = pet_repository.select_all()
     return render_template("pets/index.html", pets=pets)
 
 # SHOW
@@ -20,7 +20,7 @@ def show(id):
 
 # NEW
 @pets_blueprint.route("/pets/new")
-def new_pet():
+def add_pet():
     return render_template("pets/new.html")
 
 # SAVE
