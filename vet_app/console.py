@@ -42,18 +42,19 @@ pet_repository.save(pet_2)
 # vet_repository.delete(1)
 # pet_repository.delete(2)
 
-pet_2.name = "Test"
-pet_2.dob = "Test"
-pet_2.gender = "Test"
-pet_2.species = "Test"
-pet_2.contact_details = "Test"
-pet_2.treatment_notes = "Test"
-pet_2.admission_date = "Test"
-pet_2.vet.id = 1
-pet_repository.update(pet_2)
+# pet_2.name = "Test"
+# pet_2.dob = "Test"
+# pet_2.gender = "Test"
+# pet_2.species = "Test"
+# pet_2.contact_details = "Test"
+# pet_2.treatment_notes = "Test"
+# pet_2.admission_date = "Test"
+# pet_2.vet.id = 1
+# pet_repository.update(pet_2)
 
 # vet_1.name = "Test"
 # vet_1.address = "Test"
 # vet_1.id = 7
 # vet_repository.update(vet_1)
+
 
