@@ -10,11 +10,15 @@ import repositories.vet_repository as vet_repository
 from datetime import datetime
 
 # pet_repository.delete_all()
-vet_1 = Vet("Shawlands Vet", "-Address Info Here-")
-vet_repository.save(vet_1)
+# vet_repository.delete_all()
 
-pet_1 = Pet("Harry", "2023-05-03", "male", "dragon", "014197245", "broken leg", vet_1)
-pet_2 = Pet("Derek", "2010-02-13", "male", "ostrich", "3578479456", "damaged nose", vet_1)
+vet_1 = Vet("Shawlands Vet", "-Address Info Here-")
+vet_2 = Vet("The Other Vet", "-Address Info Here-")
+vet_repository.save(vet_1)
+vet_repository.save(vet_2)
+
+pet_1 = Pet("Harry", "to-be-datetime", "male", "dragon", "assign-contact_details-to-owner", "create timestamp, broken leg", vet_1)
+pet_2 = Pet("Derek", "to-be-datetime", "male", "ostrich", "3578479456", "damaged nose", vet_1)
 pet_repository.save(pet_1)
 pet_repository.save(pet_2)
 
@@ -32,18 +36,24 @@ pet_repository.save(pet_2)
 # print(pet_repository.select(1).admission_date)
 # print(pet_repository.select(1).id)
 
-print(vet_repository.select_all())
-print(pet_repository.select_all())
-
-
-
-# print(pet_repository.select(2))
-# print("------------")
+# print(vet_repository.select_all())
 # print(pet_repository.select_all())
 
-# print(datetime.now())
+# vet_repository.delete(1)
+# pet_repository.delete(2)
 
-# now = datetime.now() 
-# time = now.strftime("%m/%d/%Y, %H:%M:%S")
-# print(time)
+pet_2.name = "Test"
+pet_2.dob = "Test"
+pet_2.gender = "Test"
+pet_2.species = "Test"
+pet_2.contact_details = "Test"
+pet_2.treatment_notes = "Test"
+pet_2.admission_date = "Test"
+pet_2.vet.id = 1
+pet_repository.update(pet_2)
+
+# vet_1.name = "Test"
+# vet_1.address = "Test"
+# vet_1.id = 7
+# vet_repository.update(vet_1)
 

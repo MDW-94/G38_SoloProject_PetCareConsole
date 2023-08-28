@@ -55,18 +55,41 @@ def select_all():
     sql = "SELECT * FROM pets"
     results = run_sql(sql)
 
-    # for row in results:
-    #     pet = Pet(row['name'], 
-    #                row['dob'], 
-    #                row['gender'], 
-    #                row['species'], 
-    #                row['contact_details'], 
-    #                row['treatment_notes'], 
-    #                row['admission_date'], 
-    #                row['id'], )
-    #     pets.append(pet)
-    return results
+    for row in results:
+        pet = Pet(row['name'], 
+                   row['dob'], 
+                   row['gender'], 
+                   row['species'], 
+                   row['contact_details'], 
+                   row['treatment_notes'], 
+                   row['vet_id'], 
+                   row['admission_date'], 
+                   row['pet_id'])
+        pets.append(pet)
+    return pets
 
+def delete_all():
+    sql = "DELETE FROM pets"
+    run_sql(sql)
+
+def delete(id):
+    sql = "DELETE FROM pets WHERE pet_id = %s"
+    values = [id]
+    run_sql(sql, values)
+
+def update(pet):
+    sql = "UPDATE pets SET (name, dob, gender, species, contact_details, treatment_notes, admission_date, vet_id) = (%s, %s, %s, %s, %s, %s, %s, %s) WHERE pet_id = %s"
+    values = [pet.name, pet.dob, pet.gender, pet.species, pet.contact_details, pet.treatment_notes, pet.admission_date, pet.vet.id, pet.id]
+    run_sql(sql, values)
+
+
+
+# def update_treament_notes(pet):
+#     sql = "UPDATE pets SET treatment_notes = %s WHERE id = %s"
+#     values = [human.name, human.id]
+#     run_sql(sql, values)
+
+# def assign_vet():
 
 # def update_details(pet):
 #     sql = "UPDATE pets SET (name, dob, gender, species, contact_details, treatment_notes) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
@@ -82,17 +105,6 @@ def select_all():
 #     values =
 
 
-
-# def assign_vet():
-
-def delete_all():
-    sql = "DELETE FROM pets"
-    run_sql(sql)
-
-def delete(id):
-    sql = "DELETE FROM pets WHERE pet_id = %s"
-    values = [id]
-    run_sql(sql, values)
 
 
 

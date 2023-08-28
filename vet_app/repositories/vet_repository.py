@@ -2,7 +2,6 @@
 from db.run_sql import run_sql
 from models.pet import Pet
 from models.vet import Vet
-
 from datetime import datetime
 
 def save(vet):
@@ -15,6 +14,7 @@ def save(vet):
     # vet.current_pets = results[0]['current_pets_id']
     return vet
 
+
 def select_all():
     vets = []
 
@@ -25,6 +25,7 @@ def select_all():
         vet = Vet(row['name'], row['address'], row['vet_id'])
         vets.append(vet)
     return vets
+
 
 def select(id):
     sql = "SELECT * FROM vets WHERE vet_id = %s"
@@ -43,7 +44,13 @@ def delete(id):
     values = [id]
     run_sql(sql, values)
 
+
 def delete_all():
     sql = "DELETE FROM vets"
     run_sql(sql)
 
+
+def update(vet):
+    sql = "UPDATE vets SET (name, address) = ( %s, %s ) WHERE vet_id = %s"
+    values = [vet.name, vet.address, vet.id]
+    run_sql(sql, values)
