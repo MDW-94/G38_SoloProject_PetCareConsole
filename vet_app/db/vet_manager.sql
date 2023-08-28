@@ -2,6 +2,14 @@ DROP TABLE IF EXISTS pets;
 DROP TABLE IF EXISTS vets; 
 -- DROP TABLE owners;
 
+CREATE TABLE vets (
+    vet_id SERIAL PRIMARY KEY,
+    name VARCHAR(255),
+    address VARCHAR(255)
+    -- owners INT NOT NULL REFERENCES owners(id) ON DELETE CASCADE
+    -- registered_owners 
+);
+
 CREATE TABLE pets (
     pet_id SERIAL PRIMARY KEY,
     name VARCHAR(255),
@@ -10,19 +18,12 @@ CREATE TABLE pets (
     species VARCHAR(255),
     contact_details VARCHAR(255),
     treatment_notes VARCHAR(255),
-    admission_date VARCHAR(255)
+    admission_date VARCHAR(255),
+    vet_id INT REFERENCES vets(vet_id) ON DELETE CASCADE
+
     -- in_treatment BOOLEAN NOT NULL DEFAULT FALSE;
     -- feeding_times DATETIME
     -- discharge_date TIMESTAMP
-);
-
-CREATE TABLE vets (
-    vet_id SERIAL PRIMARY KEY,
-    name VARCHAR(255),
-    address VARCHAR(255),
-    current_pets_id INT REFERENCES pets(pet_id) ON DELETE CASCADE
-    -- owners INT NOT NULL REFERENCES owners(id) ON DELETE CASCADE
-    -- registered_owners 
 );
 
 
@@ -35,3 +36,6 @@ CREATE TABLE vets (
 --     registered BOOLEAN DEFAULT FALSE,
 --     FOREIGN KEY(registered_vet) INT NOT NULL REFERENCES vets(id) ON DELETE CASCADE
 -- -- );
+
+-- pet_registration table?
+-- owner_registration table?
