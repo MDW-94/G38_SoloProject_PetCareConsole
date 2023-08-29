@@ -27,7 +27,9 @@ def show(id):
 # NEW
 @notes_blueprint.route("/notes/new")
 def new_note():
-    return render_template("notes/new.html")
+    pets = pet_repository.select_all()
+    vets = vet_repository.select_all()
+    return render_template("notes/new.html", pets=pets, vets=vets)
 
 # SAVE
 @notes_blueprint.route("/notes", methods=['POST'])
@@ -37,11 +39,13 @@ def create_notes():
 
     notes = request.form['notes']
     date = time
-    pet = pet_repository.select()
-    vet = vet_repository.select()
+    pet = pet_repository.select(request.form['pet.id'])
+    vet = vet_repository.select(request.form['vet.id'])
     # vet_id = request.form['vet_id']
     new_note = Notes(notes, 
-                  date) 
+                  date,
+                  pet,
+                  vet) 
                   #vet_id)
     notes_repository.save(new_note)
     return redirect("/notes")
@@ -62,7 +66,7 @@ def update_vet(id):
     return redirect ("/vets")
 
 # DELETE
-@vets_blueprint.route("/vets/<id>/delete", methods=["POST"])
+@notes_blueprint.route("/vets/<id>/delete", methods=["POST"])
 def delete_vet(id):
     vet_repository.delete(id)
     return redirect("/vets")

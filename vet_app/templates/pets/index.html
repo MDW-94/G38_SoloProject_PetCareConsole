@@ -11,7 +11,7 @@
         <ul>
             <ul><img src="/static/images/HatchfulExport-All/small_image.png"></ul>
             <br>
-            <ul><a href="/pets/{{pet.id}}">Name:&nbsp;{{ pet.name }}</a></ul>
+            <ul><h4></4><a href="/pets/{{pet.id}}">Name:&nbsp;{{ pet.name }}</a></h4></ul>
             <br>
             <ul>D.O.B:&nbsp;{{ pet.dob }}</ul>
             <br>
@@ -25,16 +25,17 @@
             <br>
             <ul>Vet:&nbsp;{{ pet.vet }}</ul>
             <br>
-            <ul>Admission:&nbsp;{{ pet.admission_date }}</ul>
-            <br>
             <ul>ID:&nbsp;{{ pet.id }}</ul>
-
+            <br>
+            <ul>Admission:&nbsp;{{ pet.admission_date }}</ul>
+            <h4><ul><a href="/notes">Notes Index</a></ul></h4>
             <ul><p class="forms"><form action="/pets/{{ pet.id }}/edit">
             <input type="submit" value="Update"></form>
             &nbsp;
             <form action="/pets/{{ pet.id }}/delete" method="POST">
             <input type="submit" value="Deregister">
             </form></p></uL>
+            <br>
         </ul>
     </div>
 </div>

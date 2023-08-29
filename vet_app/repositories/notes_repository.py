@@ -9,10 +9,10 @@ import repositories.vet_repository as vet_repository
 from datetime import datetime
 
 def save(notes):
-    now = datetime.now()
-    time = now.strftime("%m/%d/%Y, %H:%M:%S")
+    # now = datetime.now()
+    # time = now.strftime("%m/%d/%Y, %H:%M:%S")
     sql = "INSERT INTO notes (treatment_notes, date_time, pet_id, vet_id) VALUES (%s, %s, %s, %s) RETURNING id"
-    values = [notes.treatment, time, notes.pet.id, notes.vet.id]
+    values = [notes.treatment, notes.time, notes.pet.id, notes.vet.id]
     results = run_sql(sql, values)
     id = results[0]['id']
     notes.id = id

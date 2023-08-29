@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<h2>Notes Index</h2>
+<br>
+<br>
+{% for note in notes %}
+
+<div class="grid-container2">
+    <section class="grid-item3">
+        <ul >
+            <ul>ID:&nbsp;{{ notes.id }}</ul>
+            <ul>Treament Notes:&nbsp;{{ notes.notes }}</ul>
+            <ul>Pet ID:&nbsp;{{ notes.pets.id }}</ul>
+            <ul>Vet ID:&nbsp;{{ notes.vets.id }}</ul>
+            <ul><p class="forms"><form action="/notes/{{ notes.id }}/edit">
+                <input type="submit" value="Update"></form>
+                &nbsp;
+                <form action="/notes/{{ notes.id }}/delete" method="POST">
+                <input type="submit" value="Delete">
+                </form></p></uL>
+        </ul>
+    </section>
+</div>
+
+{% endfor %}
+{% endblock %}
