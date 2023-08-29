@@ -9,21 +9,31 @@
 <div class="grid-container2">
     <div class="grid-item3">
         <ul>
+            <ul><img src="/static/images/HatchfulExport-All/small_image.png"></ul>
+            <br>
             <ul><a href="/pets/{{pet.id}}">Name:&nbsp;{{ pet.name }}</a></ul>
+            <br>
             <ul>D.O.B:&nbsp;{{ pet.dob }}</ul>
+            <br>
             <ul>Gender:&nbsp;{{ pet.gender }}</ul>
+            <br>
             <ul>Species:&nbsp;{{ pet.species }}</ul>
+            <br>
             <ul>Contact:&nbsp;{{ pet.contact_details }}</ul>
+            <br>
             <ul>Treatment notes:&nbsp;{{ pet.treatment_notes }}</ul>
+            <br>
             <ul>Vet:&nbsp;{{ pet.vet }}</ul>
+            <br>
             <ul>Admission:&nbsp;{{ pet.admission_date }}</ul>
+            <br>
             <ul>ID:&nbsp;{{ pet.id }}</ul>
 
-            <ul><p class="forms"><form action="/pets/{{ pet.id }}/edit" method="POST">
+            <ul><p class="forms"><form action="/pets/{{ pet.id }}/edit">
             <input type="submit" value="Update"></form>
             &nbsp;
             <form action="/pets/{{ pet.id }}/delete" method="POST">
-            <input type="submit" value="Delete">
+            <input type="submit" value="Deregister">
             </form></p></uL>
         </ul>
     </div>

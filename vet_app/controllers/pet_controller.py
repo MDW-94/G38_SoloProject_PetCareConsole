@@ -21,7 +21,8 @@ def show(id):
 # NEW
 @pets_blueprint.route("/pets/new")
 def add_pet():
-    return render_template("pets/new.html")
+    vets = vet_repository.select_all()
+    return render_template("pets/new.html", vets = vets)
 
 # SAVE
 @pets_blueprint.route("/pets", methods=['POST'])
@@ -32,9 +33,8 @@ def create_pet():
     species = request.form['species']
     contact_details = request.form['contact_details']
     treatment_notes = request.form['treatment_notes']
-    vet = request.form['vet_id']
+    vet = vet_repository.select(request.form["vet"])
     admission_date = request.form['admission_date']
-    pet_id = request.form['pet_id']
     new_pet = Pet(name, 
                   dob, 
                   gender, 
@@ -42,8 +42,7 @@ def create_pet():
                   contact_details, 
                   treatment_notes,
                   vet,
-                  admission_date,
-                  pet_id,)
+                  admission_date,)
     pet_repository.save(new_pet)
     return redirect("/pets")
 
@@ -51,21 +50,23 @@ def create_pet():
 @pets_blueprint.route("/pets/<id>/edit")
 def edit_pet(id):
     pet = pet_repository.select(id)
-    return render_template('pets/edit.html', pet = pet)
+    vets = vet_repository.select_all()
+    return render_template('pets/edit.html', pet = pet, vets=vets)
 
 # UPDATE
 @pets_blueprint.route("/pets/<id>", methods=["POST"])
 def update_pet(id):
     name = request.form["name"]
-    dob = request.form["name"]
-    gender = request.form["name"]
-    species = request.form["name"]
-    contact_details = request.form["name"]
-    treatment_notes = request.form["name"]
-    vet = request.form["name"] #vet.id?
-    admission_date = request.form["name"]
+    dob = request.form["dob"]
+    gender = request.form["gender"]
+    species = request.form["species"]
+    contact_details = request.form["contact_details"]
+    treatment_notes = request.form["treatment_notes"]
+    vet = vet_repository.select(request.form["vet"]) #vet.id? vet_repository select()
+    admission_date = request.form["admission_date"]
     pet = Pet(name, dob, gender, species, contact_details, treatment_notes, vet, admission_date, id)
     pet_repository.update(pet)
+    vets = vet_repository.select_all()
     return redirect ("/pets")
 
 # DELETE

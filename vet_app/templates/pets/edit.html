@@ -1,45 +1,41 @@
 {% extends "base.html" %}
 {% block content %}
-<br>
-<br>
-<h2>Register A New Animal</h2>
-<br>
-<br>
+<h2>Update {{pet.name}}</h2>
 <br>
 <div class="grid-item3">
-<form action="/pets" method="POST">
+<form action="/pets/{{ pet.id }}" method="POST">
 <div class="grid-container3">
     <br>
     <section>
         <div>
     <br>
             <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name" value="name">
+            <input type="text" id="name" name="name" value="{{ pet.name }}">
         </div>
         <br>
         <div>
             <label for="dob">D.O.B:</label><br>
-            <input type="text" id="dob" name="dob" value="dob">
+            <input type="text" id="dob" name="dob" value="{{ pet.dob }}">
         </div>  
         <br>
         <div>
             <label for="gender">Gender:</label><br>
-            <input type="text" id="gender" name="gender" value="gender">
+            <input type="text" id="gender" name="gender" value="{{ pet.gender }}">
         </div>
         <br>
         <div>
             <label for="species">Species:</label><br>
-            <input type="text" id="species" name="species" value="species">
+            <input type="text" id="species" name="species" value="{{ pet.species }}">
         </div>      
         <br>
         <div>
             <label for="contact_details">Contact:</label><br>
-            <input type="text" id="contact_details" name="contact_details" value="contact_details">
+            <input type="text" id="contact_details" name="contact_details" value="{{ pet.contact_details }}">
         </div>
         <br>
         <div>
             <label for="treatment_notes">Treatment Notes:</label><br>
-            <input type="text" id="treatment_notes" name="treatment_notes" value="treatment_notes">
+            <input type="text" id="treatment_notes" name="treatment_notes" value="{{ pet.treatment_notes }}">
         </div> 
         <br>
         <div>
@@ -53,7 +49,7 @@
         <br>
         <div>
             <label for="admission_date">Admission Date:</label><br>
-            <input type="text" id="admission_date" name="admission_date" value="admission_date">
+            <input type="text" id="admission_date" name="admission_date" value="{{ pet.admission_date }}">
         </div>
         <br>
         <div><input type="submit"></div>
