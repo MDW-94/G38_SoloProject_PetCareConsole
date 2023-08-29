@@ -74,6 +74,13 @@ It must not use:
 
 #### Setup + Installation
 
+ - terminal: vet_app
+ - dropdb vet_manager
+ - createdb vet_manager
+ - psql -d vet_manager -f /G38_project1_vetApp/vet_app/db/vet_manager.sql
+ - psql -d vet_manager
+ - type sql in here to view tables
+
 #### My Process
 
 - Diagrams link: https://www.figma.com/file/7lg3FDk1aKOEeGpsKyVq3A/Welcome-to-FigJam?type=whiteboard&node-id=0%3A1&t=9veJL0FM4aQyftR0-1

@@ -4,34 +4,48 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vets & Pets Manager</title>
+    <title>Pet Care Console</title>
 </head>
+
 <body>
+<div class="grid-item">
     <header>
-        <h1 class="h1">Vets & Pets Manager</h1>
-        <nav>
-            <ul class="menu">
-                <li><a href="/">Home</a></li>
-                <li>
-                    Pets
-                    <ul>
-                        <li><a href="/pets">All</a></li>
-                        <li><a href="/pets/new">Add</a></li>
+        <div class="grid-item">
+            <div class="fade-in-image">
+                <p style="display: inline-block;">
+                    <div class="h1"><img src="/static/images/HatchfulExport-All/small_image.png" alt="Animal health starts here"></div>
+                    <h1 class="h1" style="width:100%">Pet Care Console</h1>
+                    <br>
+                    <br>
+                </p>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <div class="grid-item2"><ul><a href="/">Home</a></ul></div>
+                    <div class="grid-item2"><ul>
+                        <ul>
+                            <ul><a href="/pets">Pets</a></ul>
+                            <ul><a href="/pets/new">Add Pet</a></ul>
+                        </ul>
+                    </ul></div>
+                    <div class="grid-item2"><ul>
+                        <ul>
+                            <ul><a href="/vets">Vets</a></ul>
+                            <ul><a href="/vets/new">Add Vet</a></ul>
+                        </ul></div>
                     </ul>
-                </li>
-                <li>
-                    Vets
-                    <ul>
-                        <li><a href="/vets">All</a></li>
-                        <li><a href="/vets/new">Add</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
+                </ul>
+            </nav>
+            </div>
+        </div>
     </header>
-    <div class="container">
+
+    
+    <!-- <div class="grid-container2"> -->
         {% block content%}
         {% endblock %}
-    </div>
+    <!-- </div> -->
+
+</div>  
 </body>
 </html>

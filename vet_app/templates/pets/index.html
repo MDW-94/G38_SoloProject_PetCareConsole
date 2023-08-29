@@ -1,8 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
 <br>
-<br>
-<br>
-- Pet Index -
+<h2>Pet Index</h2>
+{% for pet in pets %}
 
+<div class="grid-container2">
+    <section class="grid-item3">
+        <ul >
+            <ul>Name:&nbsp;{{ pet.name }}</ul>
+            <ul>D.O.B:&nbsp;{{ pet.dob }}</ul>
+            <ul>Gender:&nbsp;{{ pet.gender }}</ul>
+            <ul>Species:&nbsp;{{ pet.species }}</ul>
+            <ul>Contact:&nbsp;{{ pet.contact_details }}</ul>
+            <ul>Treatment notes:&nbsp;{{ pet.treament_notes }}</ul>
+            <ul>Vet:&nbsp;{{ pet.vet }}</ul>
+            <ul>Admission:&nbsp;{{ pet.admission_date }}</ul>
+            <ul>ID:&nbsp;{{ pet.id }}</ul>
+        </ul>
+    </section>
+</div>
+
+{% endfor %}
 {% endblock %}
