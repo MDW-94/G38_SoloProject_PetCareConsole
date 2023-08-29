@@ -21,31 +21,20 @@
             </div>
             <nav>
                 <ul class="menu">
-                    <div class="grid-item2"><ul><a href="/">Home</a></ul></div>
-                    <div class="grid-item2"><ul>
-                        <ul>
-                            <ul><a href="/pets">Pets</a></ul>
-                            <ul><a href="/pets/new">Add Pet</a></ul>
-                        </ul>
-                    </ul></div>
-                    <div class="grid-item2"><ul>
-                        <ul>
-                            <ul><a href="/vets">Vets</a></ul>
-                            <ul><a href="/vets/new">Add Vet</a></ul>
-                        </ul></div>
-                    </ul>
+                    <div class="grid-item2"><ul class="button1"><a href="/">Home</a></ul></div>
+                    <div class="grid-item2"><ul class="button2"><a href="/pets">Pets</a></ul></div>
+                    <div class="grid-item2"><ul class="button3"><a href="/pets/new">Add Pet</a></ul></div>
+                    <div class="grid-item2"><ul class="button4"><a href="/vets">Vets</a></ul></div>
+                    <div class="grid-item2"><ul class="button5"><a href="/vets/new">Add Vet</a></ul></div>
                 </ul>
+                <br>
+                <br>
             </nav>
             </div>
         </div>
     </header>
-
-    
-    <!-- <div class="grid-container2"> -->
-        {% block content%}
-        {% endblock %}
-    <!-- </div> -->
-
+{% block content%}
+{% endblock %}
 </div>  
 </body>
 </html>

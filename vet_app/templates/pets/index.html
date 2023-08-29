@@ -2,12 +2,14 @@
 {% block content %}
 <br>
 <h2>Pet Index</h2>
+<br>
+<br>
 {% for pet in pets %}
 
 <div class="grid-container2">
-    <section class="grid-item3">
-        <ul >
-            <ul>Name:&nbsp;{{ pet.name }}</ul>
+    <div class="grid-item3">
+        <ul>
+            <ul><a href="/pets/{{pet.id}}">Name:&nbsp;{{ pet.name }}</a></ul>
             <ul>D.O.B:&nbsp;{{ pet.dob }}</ul>
             <ul>Gender:&nbsp;{{ pet.gender }}</ul>
             <ul>Species:&nbsp;{{ pet.species }}</ul>
@@ -16,8 +18,15 @@
             <ul>Vet:&nbsp;{{ pet.vet }}</ul>
             <ul>Admission:&nbsp;{{ pet.admission_date }}</ul>
             <ul>ID:&nbsp;{{ pet.id }}</ul>
+
+            <ul><p class="forms"><form action="/pets/{{ pet.id }}/edit" method="POST">
+            <input type="submit" value="Update"></form>
+            &nbsp;
+            <form action="/pets/{{ pet.id }}/delete" method="POST">
+            <input type="submit" value="Delete">
+            </form></p></uL>
         </ul>
-    </section>
+    </div>
 </div>
 
 {% endfor %}

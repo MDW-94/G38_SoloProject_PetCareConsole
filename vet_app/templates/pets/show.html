@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>{{ pet.name }}</h2>
+
+<h3>Information</h3>
+<ul>
+    {% for result in pets %}
+    <ul>D.O.B:&nbsp;{{ pet.dob }}</ul>
+    <ul>Gender:&nbsp;{{ pet.gender }}</ul>
+    <ul>Species:&nbsp;{{ pet.species }}</ul>
+    <ul>Contact:&nbsp;{{ pet.contact_details }}</ul>
+    <ul>Treatment notes:&nbsp;{{ pet.treatment_notes }}</ul>
+    <ul>Vet:&nbsp;{{ pet.vet }}</ul>
+    <ul>Admission:&nbsp;{{ pet.admission_date }}</ul>
+    <ul>ID:&nbsp;{{ pet.id }}</ul>
+    {% endfor %}
+</ul>
+
+{% endblock %}

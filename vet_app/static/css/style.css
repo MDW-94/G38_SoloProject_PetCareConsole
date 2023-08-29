@@ -31,8 +31,70 @@ body {
 
 .grid-container2 {
     display: flexbox;
+    margin: auto;
 }
 
+
+.button1 {
+    background: url('/static/images/animals/scale_cat.jpg');
+    background-size: cover;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+.button2 {
+    background: url('/static/images/animals/scale_dog.jpg');
+    background-size: cover;    
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+.button3 {
+    background: url('/static/images/animals/scale_emu.jpg');
+    background-size: cover;    
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+
+.button4 {
+    background: url('/static/images/animals/scale_fox.jpg');
+    background-size: cover;        
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+.button5 {
+    background: url('/static/images/animals/scale_owl.jpg');
+    background-size: cover;        
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
 
 
 
@@ -45,6 +107,23 @@ body {
     text-size-adjust: auto;
     color: whitesmoke;
 }
+
+h2 {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    grid-area: center;
+    text-align: center;
+    text-size-adjust: auto;
+    color: whitesmoke;
+}
+
+
+.forms {
+    display: inline-flex;
+}
+
+
 
 .logo-child {
     width: 30px;
@@ -76,6 +155,8 @@ body {
     display: block;
     border: 5px solid rgba(245, 245, 245, 0.776);
     grid-area: center;
+    color: whitesmoke;
+
 }
 
 
