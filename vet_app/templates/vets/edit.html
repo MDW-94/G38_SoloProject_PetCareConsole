@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Update {{vet.name}}</h2>
+<br>
+<div class="grid-item3">
+<form action="/vets/{{ vet.id }}" method="POST">
+<div class="grid-container3">
+    <br>
+    <section>
+        <div>
+    <br>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" value="{{ vet.name }}">
+        </div>
+        <br>
+        <div>
+            <label for="address">Address:</label><br>
+            <input type="text" id="address" name="address" value="{{ vet.address }}">
+        </div> 
+        <br>
+        <div><input type="submit"></div>
+    </section>
+    <br>
+</div>
+</form>
+</div>
+
+{% endblock %}

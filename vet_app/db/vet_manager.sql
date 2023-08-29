@@ -27,13 +27,13 @@ CREATE TABLE pets (
     -- discharge_date TIMESTAMP
 );
 
--- CREATE TABLE notes (
---     id SERIAL PRIMARY KEY,
---     treatment_notes VARCHAR(255),
---     date_time VARCHAR(255),
---     pet_id INT REFERENCES pets(pet_id) ON DELETE CASCADE,
---     vet_id INT REFERENCES vets(vet_id) ON DELETE CASCADE
--- );
+CREATE TABLE notes (
+    id SERIAL PRIMARY KEY,
+    treatment_notes VARCHAR(255),
+    date_time VARCHAR(255),
+    pet_id INT REFERENCES pets(pet_id) ON DELETE CASCADE,
+    vet_id INT REFERENCES vets(vet_id) ON DELETE CASCADE
+);
 
 -- -- CREATE TABLE owners (
 --     id SERIAL PRIMARY KEY,

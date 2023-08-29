@@ -2,6 +2,31 @@
 {% block content %}
 <br>
 <br>
+<h2>Register A New Veterinary Practice</h2>
 <br>
-- Add Vet Page -
+<br>
+<br>
+<div class="grid-item3">
+    <form action="/vets" method="POST">
+    <div class="grid-container3">
+        <br>
+        <section>
+            <div>
+        <br>
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" value="name">
+            </div>
+            <br>
+            <div>
+                <label for="address">Address:</label><br>
+                <input type="text" id="address" name="address" value="address">
+            </div> 
+            <br>
+            <div><input type="submit"></div>
+        </section>
+        <br>
+    </div>
+    </form>
+    </div>
+
 {% endblock %}

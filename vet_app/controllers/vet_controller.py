@@ -28,10 +28,10 @@ def new_vet():
 def create_vet():
     name = request.form['name']
     address = request.form['address']
-    vet_id = request.form['vet_id']
+    # vet_id = request.form['vet_id']
     new_vet = Vet(name, 
-                  address, 
-                  vet_id)
+                  address) 
+                  #vet_id)
     vet_repository.save(new_vet)
     return redirect("/vets")
 

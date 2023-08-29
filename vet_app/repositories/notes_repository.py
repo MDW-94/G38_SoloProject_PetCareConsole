@@ -1,5 +1,5 @@
 from db.run_sql import run_sql
-from models.notes import Note
+from models.notes import Notes
 from models.pet import Pet
 from models.vet import Vet
 
@@ -20,20 +20,20 @@ def save(notes):
 
 
 def select_all():
-    bitings = []
-    sql = "SELECT * FROM bitings"
+    notes = []
+    sql = "SELECT * FROM notes"
     results = run_sql(sql)
     for result in results:
-        human = human_repository.select(result["human_id"])
-        zombie = zombie_repository.select(result["zombie_id"])
-        biting = Biting(human, zombie, result["id"])
-        bitings.append(biting)
-    return bitings
+        pet = pet_repository.select(result["pet_id"])
+        vet = vet_repository.select(result["vet_id"])
+        notes = Notes(pet, vet, result["id"])
+        notes.append(notes)
+    return notes
 
 
 def select(id):
     biting = None 
-    sql = "SELECT * FROM bitings WHERE id = %s"
+    sql = "SELECT * FROM notes WHERE id = %s"
     values = [id]
 
     results = run_sql(sql, values)
@@ -43,24 +43,24 @@ def select(id):
     # if len(results) > 0 
     if results:
         result = results[0]
-        human = human_repository.select(result["human_id"])
-        zombie = zombie_repository.select(result["zombie_id"])
-        biting = Biting(human, zombie, result["id"])
-    return biting
+        pet = pet_repository.select(result["pet_id"])
+        vet = vet_repository.select(result["vet_id"])
+        notes = Notes(pet, vet, result["id"])
+    return notes
 
 
 def delete_all():
-    sql = "DELETE FROM bitings"
+    sql = "DELETE FROM notes"
     run_sql(sql)
 
 
 def delete(id):
-    sql = "DELETE FROM bitings WHERE id = %s"
+    sql = "DELETE FROM notes WHERE id = %s"
     values = [id]
     run_sql(sql, values)
 
 
-def update(biting):
-    sql = "UPDATE bitings SET (human_id, zombie_id) = (%s, %s) WHERE id = %s"
-    values = [biting.human.id, biting.zombie.id, biting.id]
-    run_sql(sql, values)
+# def update(notes):
+#     sql = "UPDATE notes SET (treatment_notes, pet_id, vet_id) = (%s, %s, %s) WHERE id = %s"
+#     values = [notes.human.id, biting.zombie.id, biting.id]
+#     run_sql(sql, values)
