@@ -1,8 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
-<br>
-<br>
-<br>
-- Vet Index -
 
+<br>
+<h2>Vet Index</h2>
+{% for vet in vets %}
+
+<div class="grid-container2">
+    <section class="grid-item3">
+        <ul >
+            <ul>Name:&nbsp;{{ vet.name }}</ul>
+            <ul>Address:&nbsp;{{ vet.address }}</ul>
+            <ul>Vet ID:&nbsp;{{ vet.id }}</ul>
+        </ul>
+    </section>
+</div>
+
+{% endfor %}
 {% endblock %}

@@ -74,12 +74,15 @@ It must not use:
 
 #### Setup + Installation
 
- - terminal: vet_app
+ - in terminal, file path: G38_projects/vet_app
  - dropdb vet_manager
  - createdb vet_manager
  - psql -d vet_manager -f /G38_project1_vetApp/vet_app/db/vet_manager.sql
  - psql -d vet_manager
  - type sql in here to view tables
+
+ - in terminal, file path: G38_projects/vet_app
+ - flask run
 
 #### My Process
 
