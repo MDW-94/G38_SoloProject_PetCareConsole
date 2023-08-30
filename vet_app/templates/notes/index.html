@@ -3,15 +3,18 @@
 <br>
 <h2>Notes Index</h2>
 <br>
-<h4><ul><a href="/notes">- Add Note -</a></ul></h4>
+<h4><ul><a href="/notes/new">&#128211; &nbsp;Add Note&nbsp; &#128211;</a></ul></h4>
 <br>
 {% for note in notes %}
 
 <div class="grid-container2">
     <section class="grid-item3">
         <ul >
+            <ul>&#128211;</ul>
+            <br>
             <ul>ID:&nbsp;{{ note.id }}</ul>
-            <ul>Treament Notes:&nbsp;{{ note.notes }}</ul>
+            <ul>Treament Notes:&nbsp;<br>{{ note.notes }}</ul>
+            <br>
             <ul>Date:&nbsp;{{ note.date }}</ul>
             <ul>Pet ID:&nbsp;{{ note.pet.id }}</ul>
             <ul>Vet ID:&nbsp;{{ note.vet.id }}</ul>
