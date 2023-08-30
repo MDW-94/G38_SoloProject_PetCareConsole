@@ -1,10 +1,10 @@
 from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from models.notes import Notes
-
+import pdb
 import repositories.vet_repository as vet_repository
 import repositories.pet_repository as pet_repository
-import repositories.pet_repository as notes_repository
+import repositories.notes_repository as notes_repository
 
 from datetime import datetime
 
@@ -13,10 +13,11 @@ notes_blueprint = Blueprint("notes", __name__)
 # INDEX
 @notes_blueprint.route("/notes")
 def notes():
-    pets = pet_repository.select_all()
-    vets = vet_repository.select_all()
+    # pdb.set_trace()
+    # pets = pet_repository.select_all()
+    # vets = vet_repository.select_all()
     notes = notes_repository.select_all()
-    return render_template("notes/index.html", notes=notes, pets=pets, vets=vets)
+    return render_template("notes/index.html", notes=notes)
 
 # SHOW
 @notes_blueprint.route("/notes/<id>")

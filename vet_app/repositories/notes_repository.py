@@ -2,6 +2,7 @@ from db.run_sql import run_sql
 from models.notes import Notes
 from models.pet import Pet
 from models.vet import Vet
+import pdb
 
 import repositories.pet_repository as pet_repository
 import repositories.vet_repository as vet_repository
@@ -9,10 +10,10 @@ import repositories.vet_repository as vet_repository
 from datetime import datetime
 
 def save(notes):
-    # now = datetime.now()
-    # time = now.strftime("%m/%d/%Y, %H:%M:%S")
+    now = datetime.now()
+    time = now.strftime("%m/%d/%Y, %H:%M:%S")
     sql = "INSERT INTO notes (treatment_notes, date_time, pet_id, vet_id) VALUES (%s, %s, %s, %s) RETURNING id"
-    values = [notes.treatment, notes.time, notes.pet.id, notes.vet.id]
+    values = [notes.notes, notes.date, notes.pet.id, notes.vet.id]
     results = run_sql(sql, values)
     id = results[0]['id']
     notes.id = id
@@ -20,14 +21,15 @@ def save(notes):
 
 
 def select_all():
+    # pdb.set_trace()
     notes = []
     sql = "SELECT * FROM notes"
     results = run_sql(sql)
     for result in results:
         pet = pet_repository.select(result["pet_id"])
         vet = vet_repository.select(result["vet_id"])
-        notes = Notes(pet, vet, result["id"])
-        notes.append(notes)
+        note = Notes(result['treatment_notes'],result['date_time'],pet, vet, result["id"])
+        notes.append(note)
     return notes
 
 

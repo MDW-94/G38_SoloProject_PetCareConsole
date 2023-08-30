@@ -3,20 +3,22 @@
 <br>
 <h2>Notes Index</h2>
 <br>
+<h4><ul><a href="/notes">- Add Note -</a></ul></h4>
 <br>
 {% for note in notes %}
 
 <div class="grid-container2">
     <section class="grid-item3">
         <ul >
-            <ul>ID:&nbsp;{{ notes.id }}</ul>
-            <ul>Treament Notes:&nbsp;{{ notes.notes }}</ul>
-            <ul>Pet ID:&nbsp;{{ notes.pets.id }}</ul>
-            <ul>Vet ID:&nbsp;{{ notes.vets.id }}</ul>
-            <ul><p class="forms"><form action="/notes/{{ notes.id }}/edit">
+            <ul>ID:&nbsp;{{ note.id }}</ul>
+            <ul>Treament Notes:&nbsp;{{ note.notes }}</ul>
+            <ul>Date:&nbsp;{{ note.date }}</ul>
+            <ul>Pet ID:&nbsp;{{ note.pet.id }}</ul>
+            <ul>Vet ID:&nbsp;{{ note.vet.id }}</ul>
+            <ul><p class="forms"><form action="/notes/{{ note.id }}/edit">
                 <input type="submit" value="Update"></form>
                 &nbsp;
-                <form action="/notes/{{ notes.id }}/delete" method="POST">
+                <form action="/notes/{{ note.id }}/delete" method="POST">
                 <input type="submit" value="Delete">
                 </form></p></uL>
         </ul>

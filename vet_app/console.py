@@ -2,10 +2,12 @@
 
 from models.pet import Pet
 from models.vet import Vet
+from models.notes import Notes
 # from models.owner import Owner
 
 import repositories.pet_repository as pet_repository
 import repositories.vet_repository as vet_repository
+import repositories.notes_repository as notes_repository
 
 from datetime import datetime
 
@@ -21,6 +23,12 @@ pet_1 = Pet("Harry", "to-be-datetime", "male", "dragon", "assign-contact_details
 pet_2 = Pet("Derek", "to-be-datetime", "male", "ostrich", "3578479456", "damaged nose", vet_1)
 pet_repository.save(pet_1)
 pet_repository.save(pet_2)
+
+note_1 = Notes("Recovering from broken leg", "to-be-datetime", pet_1, vet_2)
+note_2 = Notes("Still Recovering from broken leg but looking better than a second ago", "to-be_datetime", pet_1, vet_2)
+notes_repository.save(note_1)
+notes_repository.save(note_2)
+
 
 # print(vet_repository.select(1).name)
 # print(vet_repository.select(1).address)
