@@ -1,6 +1,6 @@
 Pet Care Console
 
-
+This project was the first solo project of the CodeClan / CodeBase 16-Week Professional Software Development course. The purpose of the application is for veterinary practices to be able to admit and register pets to different vet services around the Glasgow area. Each pet admission has data concerning their age, gender, name and treatment notes associated. This data is stored in a Postgres SQL, relational database. During development I declared primary and foreign keys to the different tables so that a user could assign pets to different owners and vet services. 
 
 See below for the project brief on the course
 
@@ -21,6 +21,18 @@ It must not use:
 - JavaScript
 - Any pre-built CSS libraries, such as Bootstrap
 - Authentication
+
+  #### Setup + Installation
+
+ - in terminal, file path: G38_projects/vet_app
+ - dropdb vet_manager
+ - createdb vet_manager
+ - psql -d vet_manager -f /G38_project1_vetApp/vet_app/db/vet_manager.sql
+ - psql -d vet_manager
+ - type sql in here to view tables
+
+ - in terminal, file path: G38_projects/vet_app
+ - flask run
 
 #### MVP
 
@@ -77,18 +89,6 @@ It must not use:
 
 
 #### Testing
-
-#### Setup + Installation
-
- - in terminal, file path: G38_projects/vet_app
- - dropdb vet_manager
- - createdb vet_manager
- - psql -d vet_manager -f /G38_project1_vetApp/vet_app/db/vet_manager.sql
- - psql -d vet_manager
- - type sql in here to view tables
-
- - in terminal, file path: G38_projects/vet_app
- - flask run
 
 #### My Process
 
