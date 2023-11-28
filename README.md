@@ -1,4 +1,6 @@
-Pet Care Console
+<img width="850" alt="Screenshot 2023-11-21 at 09 59 11" src="https://github.com/MDW-94/G38_SoloProject_PetCareConsole/assets/138756503/dfb65501-16df-420c-8694-c16e6dc2d33e">
+
+# Pet Care Console - Full-Stack Flask App
 
 This project was the first solo project of the CodeClan / CodeBase 16-Week Professional Software Development course. The purpose of the application is for veterinary practices to be able to admit and register pets to different vet services around the Glasgow area. Each pet admission has data concerning their age, gender, name and treatment notes associated. This data is stored in a Postgres SQL, relational database. During development I declared primary and foreign keys to the different tables so that a user could assign pets to different owners and vet services. 
 
@@ -62,6 +64,9 @@ It must not use:
 
 - Add extra functionality to your app: assigning treatments,  comprehensive ways  of maintaining treatment notes over time, appointments, pricing/billing
 
+<img width="499" alt="Screenshot 2023-11-21 at 10 00 59" src="https://github.com/MDW-94/G38_SoloProject_PetCareConsole/assets/138756503/9ebf1e85-92ed-43cb-b1fe-4dec1abd7085">
+
+<img width="499" alt="Screenshot 2023-11-21 at 10 00 39" src="https://github.com/MDW-94/G38_SoloProject_PetCareConsole/assets/138756503/995a04b0-73d2-4194-bc43-1fc88ecf6a93">
 
 ##### Initial Thoughts on MVP
 
@@ -86,6 +91,8 @@ It must not use:
 - Add a filter function for the pets index to find specific pets - maybe this filter function can detect certain text within the treatment notes
 
 - If photo of animal is not available use a unicode image substitute for the animal to appear in the show and index pages - unicode dependent upon type of animal
+
+
 
 
 #### Testing
