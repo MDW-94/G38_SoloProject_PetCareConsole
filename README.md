@@ -4,8 +4,6 @@
 
 This project was the first solo project of the CodeClan / CodeBase 16-Week Professional Software Development course. The purpose of the application is for veterinary practices to be able to admit and register pets to different vet services around the Glasgow area. Each pet admission has data concerning their age, gender, name and treatment notes associated. This data is stored in a Postgres SQL, relational database. During development I declared primary and foreign keys to the different tables so that a user could assign pets to different owners and vet services. 
 
-See below for the project brief on the course
-
 ### Brief: Vet
 
 A local veterinary practice has asked you to build a web application to help them manage their animals and vets. A vet may look after many animals at a time. An animal is registered with only one vet. 
