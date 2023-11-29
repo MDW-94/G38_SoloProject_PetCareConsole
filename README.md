@@ -24,7 +24,7 @@ It must not use:
 - Any pre-built CSS libraries, such as Bootstrap
 - Authentication
 
-  #### Setup + Installation
+### Setup + Installation
 
  - in terminal, file path: G38_projects/vet_app
  - dropdb vet_manager
@@ -36,7 +36,7 @@ It must not use:
  - in terminal, file path: G38_projects/vet_app
  - flask run
 
-#### MVP
+### MVP
 
 - The practice wants to be able to register/track animals. 
 - Pets should have the following information associated to them: 
@@ -50,7 +50,7 @@ It must not use:
 - Animals should be able to be assigned to vets
 - CRUD actions for vets/animals - What views should be there for the user?
 
-#### Extension
+### Extension
 
 - Owners can be registered/unregistered from the Vet - unregistered owners wont be able to add any more animals
 
@@ -68,13 +68,13 @@ It must not use:
 
 <img width="499" alt="Screenshot 2023-11-21 at 10 00 39" src="https://github.com/MDW-94/G38_SoloProject_PetCareConsole/assets/138756503/995a04b0-73d2-4194-bc43-1fc88ecf6a93">
 
-##### Initial Thoughts on MVP
+#### Initial Thoughts on MVP
 
 - contact details for owner could be substituted for owner_id - another table could be made
 - user should be able to add, delete, save and update pets and vets
 - convert str value of pet DOB to datetime
 
-##### Initial Thoughts of Extra Functionality:
+#### Initial Thoughts of Extra Functionality:
 
 - Location information of the veterinary practices, reflected in the front-end with a map image highlighting the district of the city where the practice is located (ie Battlefield, Glasgow highlighted on map)
 
